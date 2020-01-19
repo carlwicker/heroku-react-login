@@ -11,3 +11,27 @@
   padding: 25px;
   color: white;
 }
+
+.userListContainer {
+  position: static;
+  background-color: goldenrod;
+  padding: 25px;
+  color: white;
+}
+
+th {
+  color: white;
+}
+
+td {
+  color: white;
+}
+
+.table-hover {
+  color: white;
+}
+
+td.min-width {
+  width: 1%;
+  white-space: nowrap;
+}
