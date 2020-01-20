@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 // Login
 export const login = data => {
   return {
@@ -8,9 +10,17 @@ export const login = data => {
 
 // Create Account
 export const createAccount = data => {
-  return {
-    type: "CREATE_ACCOUNT",
-    payload: data
+  return dispatch => {
+    // Axios PUT here
+    Axios.post("https://react-login-js.herokuapp.com/api/users", data)
+      .then(() => {
+        dispatch({
+          type: "CREATE_ACCOUNT",
+          payload: data
+        });
+        console.log(data);
+      })
+      .catch(err => console.log(err));
   };
 };
 

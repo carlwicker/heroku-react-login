@@ -21,6 +21,7 @@ function CreateAccountForm(props) {
           );
 
           if (
+            // Bug here
             emailInput.value === confirmEmailInput.value &&
             passwordInput.value === confirmPasswordInput.value
           ) {
@@ -43,6 +44,7 @@ function CreateAccountForm(props) {
             email: emailInput.value,
             password: passwordInput.value
           };
+          console.log(data);
           dispatch(createAccount(data));
         }}
       >
@@ -70,6 +72,7 @@ function CreateAccountForm(props) {
             className="form-control"
             placeholder="Email"
             autoComplete="email"
+            aria-describedby="emailHelp"
             required
           />
         </div>
@@ -78,6 +81,7 @@ function CreateAccountForm(props) {
             id="confirm-email"
             className="form-control"
             placeholder="Confirm Email"
+            aria-describedby="emailHelp"
             autoComplete="email"
             required
           />
@@ -94,6 +98,7 @@ function CreateAccountForm(props) {
         </div>
         <div className="form-group">
           <input
+            defaultValue=""
             id="confirm-password"
             autoComplete="new-password"
             className="form-control"
