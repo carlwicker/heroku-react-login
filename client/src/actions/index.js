@@ -17,7 +17,7 @@ export const createAccount = data => {
 // Validate Create Account Form
 export const validateCreateAccountForm = data => {
   return {
-    type: "VALID",
+    type: "CREATE_ACCOUNT_VALIDATION",
     payload: data
   };
 };

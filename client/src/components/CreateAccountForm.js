@@ -8,19 +8,17 @@ function CreateAccountForm(props) {
 
   return (
     <div className="userAccountContainer">
-      <h2>Create Account with Validation</h2>
+      <h2>Create Account</h2>
 
       <form
         onChange={e => {
           e.preventDefault();
-
           const emailInput = document.getElementById("email");
           const confirmEmailInput = document.getElementById("confirm-email");
           const passwordInput = document.getElementById("password");
           const confirmPasswordInput = document.getElementById(
             "confirm-password"
           );
-          console.log(emailInput.value, confirmEmailInput.value);
 
           if (
             emailInput.value === confirmEmailInput.value &&
@@ -45,7 +43,6 @@ function CreateAccountForm(props) {
             email: emailInput.value,
             password: passwordInput.value
           };
-
           dispatch(createAccount(data));
         }}
       >
