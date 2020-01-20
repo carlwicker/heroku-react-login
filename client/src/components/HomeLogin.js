@@ -12,8 +12,8 @@ function HomeLogin(props) {
       <form
         onSubmit={e => {
           e.preventDefault();
-          const emailInput = document.getElementById("email");
-          const passwordInput = document.getElementById("password");
+          const emailInput = document.getElementById("login-email");
+          const passwordInput = document.getElementById("login-password");
 
           const data = {
             email: emailInput.value,
@@ -26,7 +26,7 @@ function HomeLogin(props) {
       >
         <div className="form-group">
           <input
-            id="email"
+            id="login-email"
             type="email"
             placeholder="Email"
             autoComplete="username"
@@ -36,7 +36,7 @@ function HomeLogin(props) {
         </div>
         <div className="form-group">
           <input
-            id="password"
+            id="login-password"
             type="password"
             autoComplete="current-password"
             placeholder="Password"

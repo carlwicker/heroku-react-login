@@ -13,3 +13,11 @@ export const createAccount = data => {
     payload: data
   };
 };
+
+// Validate Create Account Form
+export const validateCreateAccountForm = data => {
+  return {
+    type: "VALID",
+    payload: data
+  };
+};

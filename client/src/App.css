@@ -35,3 +35,11 @@ td.min-width {
   width: 1%;
   white-space: nowrap;
 }
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+  color: lightgrey;
+  font-size: 12pt !important;
+  padding: 25px;
+}

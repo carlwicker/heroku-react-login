@@ -1,23 +1,43 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { createAccount } from "../actions";
+import { useDispatch, useSelector } from "react-redux";
+import { createAccount, validateCreateAccountForm } from "../actions";
 
 function CreateAccountForm(props) {
+  const isFormValid = useSelector(state => state.validateFormReducer);
   const dispatch = useDispatch();
 
   return (
     <div className="userAccountContainer">
-      <h2>Create Account</h2>
+      <h2>Create Account with Validation</h2>
 
       <form
-        onSubmit={e => {
+        onChange={e => {
           e.preventDefault();
-          const firstNameInput = document.getElementById("first-name");
-          const lastNameInput = document.getElementById("last-name");
+
           const emailInput = document.getElementById("email");
           const confirmEmailInput = document.getElementById("confirm-email");
           const passwordInput = document.getElementById("password");
-          const confirmPassword = document.getElementById("confirm-password");
+          const confirmPasswordInput = document.getElementById(
+            "confirm-password"
+          );
+          console.log(emailInput.value, confirmEmailInput.value);
+
+          if (
+            emailInput.value === confirmEmailInput.value &&
+            passwordInput.value === confirmPasswordInput.value
+          ) {
+            dispatch(validateCreateAccountForm(true));
+          } else {
+            dispatch(validateCreateAccountForm(false));
+          }
+        }}
+        onSubmit={e => {
+          e.preventDefault();
+
+          const firstNameInput = document.getElementById("first-name");
+          const lastNameInput = document.getElementById("last-name");
+          const emailInput = document.getElementById("email");
+          const passwordInput = document.getElementById("password");
 
           const data = {
             firstname: firstNameInput.value,
@@ -85,9 +105,15 @@ function CreateAccountForm(props) {
             required
           />
         </div>
-        <button className="btn btn-primary" type="submit">
-          Create Account
-        </button>{" "}
+        {isFormValid ? (
+          <button className="btn btn-primary" type="submit">
+            Create Account
+          </button>
+        ) : (
+          <button className="btn btn-danger" type="submit" disabled>
+            Create Account
+          </button>
+        )}{" "}
         <button className="btn btn-primary" type="reset">
           Reset
         </button>
