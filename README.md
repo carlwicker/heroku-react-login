@@ -1,5 +1,5 @@
-# User Login MERN Stack
+## React / Redux Playground Area
 
-User Login system to practice ExpressJS, ReactJS & Redux in a production environment.
+React / Redux Playground Area in a production environment.
 
 https://react-login-js.herokuapp.com/
