@@ -4,10 +4,13 @@ const path = require("path");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+// Users API Endpoint
+const users = require("./routes/api/users");
+
 // Express Port
 const port = process.env.PORT || 5000;
 
-// !!! CONFIGURE .env FILE IN ROOT FOR ENVIRONMENTAL VARIABLES !!!
+// Environmental Variables
 require("dotenv").config();
 
 // Express Body Parser
@@ -16,10 +19,12 @@ app.use(express.json());
 // Enable CORS
 app.use(cors());
 
-// !!! CONFIGURE MONGOOSE CONNECTION HERE !!!
+// Heroku MLab Connection via Mongoose
+const db = process.env.MONGODB_URI;
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// const db = process.env.MONGODB_URI;
-// mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true });
+// Items API Endpoints
+app.use("/api/users", users);
 
 // Static React Build Folder
 app.use(express.static(path.join(__dirname, "client/build/")));
