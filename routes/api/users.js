@@ -15,7 +15,6 @@ router.post("/", (req, res) => {
     password: req.body.password
   });
   user.save().then(user => res.json(user));
-  console.log(user);
 });
 
 router.get("/", (req, res) => {

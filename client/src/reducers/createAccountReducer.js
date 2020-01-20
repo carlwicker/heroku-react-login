@@ -1,5 +1,3 @@
-import Axios from "axios";
-
 const createAccountReducer = (state = {}, action) => {
   switch (action.type) {
     case "CREATE_ACCOUNT":

@@ -36,7 +36,11 @@ function CreateAccountForm(props) {
           const firstNameInput = document.getElementById("first-name");
           const lastNameInput = document.getElementById("last-name");
           const emailInput = document.getElementById("email");
+          const confirmEmailInput = document.getElementById("confirm-email");
           const passwordInput = document.getElementById("password");
+          const confirmPasswordInput = document.getElementById(
+            "confirm-password"
+          );
 
           const data = {
             firstname: firstNameInput.value,
@@ -44,8 +48,13 @@ function CreateAccountForm(props) {
             email: emailInput.value,
             password: passwordInput.value
           };
-          console.log(data);
           dispatch(createAccount(data));
+          firstNameInput.value = "";
+          lastNameInput.value = "";
+          emailInput.value = "";
+          passwordInput.value = "";
+          confirmEmailInput.value = "";
+          confirmPasswordInput.value = "";
         }}
       >
         <div className="form-group">
