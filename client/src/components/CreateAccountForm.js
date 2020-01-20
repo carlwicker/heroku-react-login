@@ -48,7 +48,11 @@ function CreateAccountForm(props) {
             email: emailInput.value,
             password: passwordInput.value
           };
+
+          // Send Data
           dispatch(createAccount(data));
+
+          // Reset Form
           firstNameInput.value = "";
           lastNameInput.value = "";
           emailInput.value = "";
