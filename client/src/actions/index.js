@@ -1,13 +1,8 @@
-// Maths Actions
-export const increment = num => {
-  return {
-    type: "INCREMENT",
-    payload: num
-  };
-};
+// Login Test Action
 
-export const decrement = () => {
+export const login = data => {
   return {
-    type: "DECREMENT"
+    type: "LOGIN",
+    payload: data
   };
 };
