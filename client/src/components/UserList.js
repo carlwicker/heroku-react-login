@@ -17,11 +17,32 @@ function UserList() {
         Load Users List
       </button>
 
-      {allUsers.map((user, index) => {
-        return (
-          <div>{user._id + " - " + user.firstname + " " + user.lastname}</div>
-        );
-      })}
+      <table className="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Controls</th>
+          </tr>
+        </thead>
+        <tbody>
+          {allUsers.map((user, index) => {
+            return (
+              <tr key={user._id}>
+                <th scope="row" className="min-width align-middle">
+                  {user._id}
+                </th>
+                <td className="align-middle">
+                  {user.firstname} {user.lastname}
+                </td>
+                <td className="min-width align-middle">
+                  <button className="btn btn-light">Delete</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

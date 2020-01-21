@@ -13,28 +13,23 @@
 }
 
 .userListContainer {
-
   background-color: goldenrod;
   padding: 25px;
   color: white;
 }
 
-th {
-  color: white;
-}
-
-td {
-  color: white;
-}
-
-.table-hover {
-  color: white;
-}
-
+th.min-width,
 td.min-width {
   width: 1%;
   white-space: nowrap;
 }
+
+tr,
+td,
+th {
+  color: white;
+}
+
 
 h1 {
   text-align: center;
