@@ -1,6 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createAccount, validateCreateAccountForm } from "../actions";
+import {
+  createAccount,
+  validateCreateAccountForm,
+  getAllUsersJSON
+} from "../actions";
 
 function CreateAccountForm(props) {
   const isFormValid = useSelector(state => state.validateFormReducer);
@@ -51,6 +55,8 @@ function CreateAccountForm(props) {
 
           // Send Data
           dispatch(createAccount(data));
+          // Refresh User List
+          dispatch(getAllUsersJSON());
 
           // Reset Form
           firstNameInput.value = "";
