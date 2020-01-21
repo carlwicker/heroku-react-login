@@ -31,3 +31,16 @@ export const validateCreateAccountForm = data => {
     payload: data
   };
 };
+
+export const getAllUsersJSON = () => {
+  return dispatch => {
+    Axios.get("https://react-login-js.herokuapp.com/api/users")
+      .then(res => {
+        dispatch({
+          type: "GET_ALL_USER_ACCOUNTS",
+          payload: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+};
