@@ -44,3 +44,16 @@ export const getAllUsersJSON = () => {
       .catch(err => console.log(err));
   };
 };
+
+export const deleteUser = _id => {
+  return dispatch => {
+    Axios.delete("https://react-login-js.herokuapp.com/api/users/" + _id).then(
+      res => {
+        dispatch({
+          type: "DELETE_USER",
+          payload: res._id
+        });
+      }
+    );
+  };
+};

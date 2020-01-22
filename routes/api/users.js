@@ -27,3 +27,10 @@ router.post("/", (req, res) => {
 });
 
 module.exports = router;
+
+router.delete("/:_id", (req, res) => {
+  console.log(req.params._id);
+  User.findById(req.params._id)
+    .then(user => user.remove().then(() => res.json({ success: true })))
+    .catch(err => res.status(404).json({ success: false }));
+});

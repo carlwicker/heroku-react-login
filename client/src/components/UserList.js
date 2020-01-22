@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllUsersJSON } from "../actions";
+import { getAllUsersJSON, deleteUser } from "../actions";
 
 function UserList() {
   let allUsers = useSelector(state => state.getAllUsersReducer);
@@ -36,7 +36,14 @@ function UserList() {
                   {user.firstname} {user.lastname}
                 </td>
                 <td className="min-width align-middle">
-                  <button className="btn btn-light">Delete</button>
+                  <button
+                    className="btn btn-light"
+                    onClick={() => {
+                      dispatch(deleteUser(user._id));
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
