@@ -39,7 +39,11 @@ function UserList() {
                   <button
                     className="btn btn-light"
                     onClick={() => {
+                      // Delete User
                       dispatch(deleteUser(user._id));
+
+                      // Refresh List
+                      dispatch(getAllUsersJSON());
                     }}
                   >
                     Delete
