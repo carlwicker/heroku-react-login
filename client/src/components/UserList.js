@@ -11,7 +11,7 @@ function UserList() {
     <div className="userListContainer">
       <h2>User Administration</h2>
       {!isUserListLoaded
-        ? dispatch(getAllUsersJSON()) && dispatch(userListLoaded(true))
+        ? dispatch(userListLoaded(true)) && dispatch(getAllUsersJSON())
         : null}
       <table className="table table-hover">
         <thead>

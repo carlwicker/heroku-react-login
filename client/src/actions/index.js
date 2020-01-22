@@ -61,11 +61,8 @@ export const deleteUser = _id => {
 };
 
 export const userListLoaded = data => {
-  if (data === true) {
-    return dispatch =>
-      dispatch({
-        type: "USER_LIST_LOADED",
-        payload: data
-      });
-  }
+  return {
+    type: "USER_LIST_LOADED",
+    payload: data
+  };
 };
