@@ -3,12 +3,14 @@ import loginReducer from "./loginReducer";
 import createAccountReducer from "./createAccountReducer";
 import validateFormReducer from "./validateFormReducer";
 import getAllUsersReducer from "./getAllUsers";
+import deleteUserReducer from "./deleteUserReducer";
 
 const allReducers = combineReducers({
   loginReducer: loginReducer,
   createAccountReducer: createAccountReducer,
   validateFormReducer: validateFormReducer,
-  getAllUsersReducer: getAllUsersReducer
+  getAllUsersReducer: getAllUsersReducer,
+  deleteUserReducer: deleteUserReducer
 });
 
 export default allReducers;
