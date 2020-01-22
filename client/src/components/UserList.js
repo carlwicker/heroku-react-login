@@ -9,7 +9,7 @@ function UserList() {
 
   return (
     <div className="userListContainer">
-      <h2>User Admin</h2>
+      <h2>User Administration</h2>
       {!isUserListLoaded
         ? dispatch(getAllUsersJSON()) && dispatch(userListLoaded(true))
         : null}
@@ -18,6 +18,7 @@ function UserList() {
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
+            <th scope="col">Email</th>
             <th scope="col">Controls</th>
           </tr>
         </thead>
@@ -31,12 +32,12 @@ function UserList() {
                 <td className="align-middle">
                   {user.firstname} {user.lastname}
                 </td>
+                <td className="align-middle">{user.email}</td>
                 <td className="min-width align-middle">
                   <button
                     className="btn btn-light"
                     onClick={e => {
                       e.preventDefault();
-                      // Dispatch Delete User
                       dispatch(deleteUser(user._id));
                     }}
                   >
