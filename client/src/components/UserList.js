@@ -1,22 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllUsersJSON, deleteUser } from "../actions";
+import { getAllUsersJSON, deleteUser, userListLoaded } from "../actions";
 
 function UserList() {
   let allUsers = useSelector(state => state.getAllUsersReducer);
+  let isUserListLoaded = useSelector(state => state.userLoadedReducer);
   const dispatch = useDispatch();
 
   return (
     <div className="userListContainer">
-      <button
-        className="btn btn-primary"
-        onClick={() => {
-          dispatch(getAllUsersJSON());
-        }}
-      >
-        Load Users List
-      </button>
-
+      {!isUserListLoaded
+        ? dispatch(userListLoaded(true)) && dispatch(getAllUsersJSON())
+        : null}
       <table className="table table-hover">
         <thead>
           <tr>
@@ -38,12 +33,10 @@ function UserList() {
                 <td className="min-width align-middle">
                   <button
                     className="btn btn-light"
-                    onClick={() => {
-                      // Delete User
+                    onClick={e => {
+                      e.preventDefault();
+                      // Dispatch Delete User
                       dispatch(deleteUser(user._id));
-
-                      // Refresh List
-                      dispatch(getAllUsersJSON());
                     }}
                   >
                     Delete

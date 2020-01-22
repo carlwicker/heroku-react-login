@@ -18,6 +18,8 @@ export const createAccount = data => {
           type: "CREATE_ACCOUNT",
           payload: data
         });
+        dispatch(getAllUsersJSON());
+        dispatch(validateCreateAccountForm(false));
         console.log(data);
       })
       .catch(err => console.log(err));
@@ -50,10 +52,20 @@ export const deleteUser = _id => {
     Axios.delete("https://react-login-js.herokuapp.com/api/users/" + _id).then(
       res => {
         dispatch({
-          type: "DELETE_USER",
-          payload: res._id
+          type: "DELETE_USER"
         });
+        dispatch(getAllUsersJSON());
       }
     );
   };
+};
+
+export const userListLoaded = data => {
+  if (data === true) {
+    return dispatch =>
+      dispatch({
+        type: "USER_LIST_LOADED",
+        payload: data
+      });
+  }
 };
