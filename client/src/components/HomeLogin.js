@@ -8,7 +8,7 @@ function HomeLogin(props) {
   return (
     // Login Container
     <div className="loginContainer">
-      <h2>Login</h2>
+      <h1 class="display-4">Login</h1>
       <form
         onSubmit={e => {
           e.preventDefault();

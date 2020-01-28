@@ -1,13 +1,20 @@
 .loginContainer {
   position: static;
-  background-color: darkgrey;
+  background-color: darkseagreen;
+  padding: 25px;
+  color: white;
+}
+
+.homeContainer {
+  position: static;
+  background-color: lightskyblue;
   padding: 25px;
   color: white;
 }
 
 .userAccountContainer {
   position: static;
-  background-color: rgba(119, 136, 153);
+  background-color: lightgray;
   padding: 25px;
   color: white;
 }
@@ -28,13 +35,4 @@ tr,
 td,
 th {
   color: white;
-}
-
-
-h1 {
-  text-align: center;
-  font-weight: 100;
-  color: lightgrey;
-  font-size: 12pt !important;
-  padding: 25px;
 }

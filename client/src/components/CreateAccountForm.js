@@ -12,7 +12,7 @@ function CreateAccountForm(props) {
 
   return (
     <div className="userAccountContainer">
-      <h2>Create User Account</h2>
+      <h1 class="display-4">Create User Account</h1>
 
       <form
         onChange={e => {
