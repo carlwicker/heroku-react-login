@@ -36,3 +36,7 @@ td,
 th {
   color: white;
 }
+
+nav {
+  margin: 10px 0px 10px;
+}

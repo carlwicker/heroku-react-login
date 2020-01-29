@@ -1,29 +1,40 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Link,
+  Switch
+} from "react-router-dom";
 
 function Navigation() {
   return (
     <nav>
-      <ul className="nav justify-content-center">
+      <ul className="nav nav-tabs justify-content-center">
         <li className="nav-item">
-          <Link className="nav-link" to="/">
+          <NavLink
+            className="nav-link"
+            to="/"
+            exact="true"
+            activeClassName="active"
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/login">
+          <NavLink className="nav-link" to="/login" activeClassName="active">
             Login
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/create">
+          <NavLink className="nav-link" to="/create" activeClassName="active">
             Create User Account
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/users">
+          <NavLink className="nav-link" to="/users" activeClassName="active">
             User Administration
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
