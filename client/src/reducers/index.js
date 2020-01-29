@@ -5,6 +5,7 @@ import validateFormReducer from "./validateFormReducer";
 import getAllUsersReducer from "./getAllUsers";
 import deleteUserReducer from "./deleteUserReducer";
 import userLoadedReducer from "./userLoadedReducer";
+import redirectHomeReducer from "./redirectHome";
 
 const allReducers = combineReducers({
   loginReducer: loginReducer,
@@ -12,7 +13,8 @@ const allReducers = combineReducers({
   validateFormReducer: validateFormReducer,
   getAllUsersReducer: getAllUsersReducer,
   deleteUserReducer: deleteUserReducer,
-  userLoadedReducer: userLoadedReducer
+  userLoadedReducer: userLoadedReducer,
+  redirectHomeReducer: redirectHomeReducer
 });
 
 export default allReducers;

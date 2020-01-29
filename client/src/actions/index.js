@@ -66,3 +66,10 @@ export const userListLoaded = data => {
     payload: data
   };
 };
+
+// Redirect Home
+export const redirectHome = () => {
+  return {
+    type: "REDIRECT_HOME"
+  };
+};

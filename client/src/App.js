@@ -3,17 +3,19 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import HomeLogin from "./components/HomeLogin";
 import CreateAccountForm from "./components/CreateAccountForm";
+import WIP from "./components/WIP";
 import UserList from "./components/UserList";
 import Home from "./components/Home";
-import WIP from "./components/WIP";
 import Navigation from "./components/Navigation";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div className="container">
         <Navigation />
+
+        <WIP />
 
         <Switch>
           <Route path="/create">

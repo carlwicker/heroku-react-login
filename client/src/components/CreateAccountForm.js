@@ -3,16 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   createAccount,
   validateCreateAccountForm,
-  getAllUsersJSON
+  getAllUsersJSON,
+  redirectHome
 } from "../actions";
 
 function CreateAccountForm(props) {
   const isFormValid = useSelector(state => state.validateFormReducer);
+  const redirectHome = useSelector(state => state.redirectHomeReducer);
+  // WIP
+  console.log(redirectHome);
+
   const dispatch = useDispatch();
 
   return (
     <div className="userAccountContainer">
-      <h1 class="display-4">Create User Account</h1>
+      <h1 className="display-4">Create User Account</h1>
 
       <form
         onChange={e => {

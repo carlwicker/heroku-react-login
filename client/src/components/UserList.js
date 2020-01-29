@@ -9,7 +9,7 @@ function UserList() {
 
   return (
     <div className="userListContainer">
-      <h1 class="display-4">User Administration</h1>
+      <h1 className="display-4">User Administration</h1>
       {!isUserListLoaded
         ? dispatch(userListLoaded(true)) && dispatch(getAllUsersJSON())
         : null}

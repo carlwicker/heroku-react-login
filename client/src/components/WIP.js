@@ -1,7 +1,11 @@
 import React from "react";
 
 function WIP(props) {
-  return <h1>WIP - {Date()}</h1>;
+  return (
+    <div className="alert alert-warning wip" role="alert">
+      Work In Progress - {Date()}
+    </div>
+  );
 }
 
 export default WIP;

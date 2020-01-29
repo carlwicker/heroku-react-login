@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Link,
-  Switch
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navigation() {
   return (
@@ -15,7 +9,7 @@ function Navigation() {
           <NavLink
             className="nav-link"
             to="/"
-            exact="true"
+            exact={true}
             activeClassName="active"
           >
             Home

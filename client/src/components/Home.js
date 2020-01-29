@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function Home(props) {
   return (
-    <div class="homeContainer">
-      <h1 class="display-4">Work In Progress</h1>
-      <p class="lead">
+    <div className="homeContainer">
+      <h1 className="display-4">Work In Progress</h1>
+      <p className="lead">
         Fucking about with Express, React, Redux, Axios, Router...
       </p>
 
