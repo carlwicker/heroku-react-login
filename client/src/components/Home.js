@@ -6,7 +6,7 @@ function Home(props) {
     <div class="homeContainer">
       <h1 class="display-4">Work In Progress</h1>
       <p class="lead">
-        Playing around with Express, React, Redux, Axios, Router...
+        Fucking about with Express, React, Redux, Axios, Router...
       </p>
 
       <Link to="/create">

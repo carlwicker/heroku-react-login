@@ -1,28 +1,29 @@
 .loginContainer {
-  position: static;
   background-color: darkseagreen;
   padding: 25px;
   color: white;
+  border-radius: 10px;
 }
 
 .homeContainer {
-  position: static;
   background-color: lightskyblue;
   padding: 25px;
   color: white;
+  border-radius: 10px;
 }
 
 .userAccountContainer {
-  position: static;
   background-color: lightgray;
   padding: 25px;
   color: white;
+  border-radius: 10px;
 }
 
 .userListContainer {
-  background-color: goldenrod;
+  background-color: gray;
   padding: 25px;
   color: white;
+  border-radius: 10px
 }
 
 th.min-width,
@@ -34,9 +35,13 @@ td.min-width {
 tr,
 td,
 th {
-  color: white;
+  color: White;
 }
 
 nav {
   margin: 10px 0px 10px;
+}
+
+h1 {
+  padding-bottom: 50px;
 }

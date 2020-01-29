@@ -13,12 +13,11 @@ function UserList() {
       {!isUserListLoaded
         ? dispatch(userListLoaded(true)) && dispatch(getAllUsersJSON())
         : null}
-      <table className="table table-hover">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Email</th>
             <th scope="col">Controls</th>
           </tr>
         </thead>
@@ -32,10 +31,9 @@ function UserList() {
                 <td className="align-middle">
                   {user.firstname} {user.lastname}
                 </td>
-                <td className="align-middle">{user.email}</td>
                 <td className="min-width align-middle">
                   <button
-                    className="btn btn-light"
+                    className="btn btn-primary"
                     onClick={e => {
                       e.preventDefault();
                       dispatch(deleteUser(user._id));

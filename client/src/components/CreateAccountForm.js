@@ -58,6 +58,8 @@ function CreateAccountForm(props) {
           // Refresh User List
           dispatch(getAllUsersJSON());
 
+          alert(data.firstname + " " + data.lastname + " has been created");
+
           // Reset Form
           firstNameInput.value = "";
           lastNameInput.value = "";
