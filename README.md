@@ -1,5 +1,5 @@
-## React / Redux Playground Area
+## Express, React & Redux
 
-React / Redux Playground Area in a production environment.
+Playing around with Express, React, Redux, Axios, React Router...
 
-https://react-login-js.herokuapp.com/
+https://react-login-js.herokuapp.com

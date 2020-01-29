@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../actions";
+import { Link } from "react-router-dom";
 
 function HomeLogin(props) {
   const dispatch = useDispatch();
@@ -49,9 +50,11 @@ function HomeLogin(props) {
         <button className="btn btn-primary" type="reset">
           Reset
         </button>{" "}
-        <button className="btn btn-primary" type="button">
-          Create Account
-        </button>
+        <Link to="/create">
+          <button className="btn btn-primary" type="button">
+            Create Account
+          </button>
+        </Link>
       </form>
     </div>
   );
