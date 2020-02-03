@@ -20,7 +20,6 @@ export const createAccount = data => {
         });
         dispatch(getAllUsersJSON());
         dispatch(validateCreateAccountForm(false));
-        console.log(data);
       })
       .catch(err => console.log(err));
   };
@@ -67,9 +66,10 @@ export const userListLoaded = data => {
   };
 };
 
-// Redirect Home
-export const redirectHome = () => {
+// Redirect User List
+export const redirectUserList = data => {
   return {
-    type: "REDIRECT_HOME"
+    type: "REDIRECT_USER_LIST",
+    payload: data
   };
 };

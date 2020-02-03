@@ -1,11 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllUsersJSON, deleteUser, userListLoaded } from "../actions";
+import {
+  getAllUsersJSON,
+  deleteUser,
+  userListLoaded,
+  redirectUserList
+} from "../actions";
 
 function UserList() {
   let allUsers = useSelector(state => state.getAllUsersReducer);
   let isUserListLoaded = useSelector(state => state.userLoadedReducer);
   const dispatch = useDispatch();
+
+  dispatch(redirectUserList(false));
 
   return (
     <div className="userListContainer">
