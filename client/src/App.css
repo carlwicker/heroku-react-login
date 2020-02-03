@@ -30,6 +30,14 @@
   margin-bottom: 100px;
 }
 
+.editUserContainer {
+  background-color: peachpuff;
+  padding: 25px;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+
 th.min-width,
 td.min-width {
   width: 1%;

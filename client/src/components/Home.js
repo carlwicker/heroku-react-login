@@ -6,7 +6,7 @@ function Home(props) {
     <div className="homeContainer">
       <h1 className="display-4">Work In Progress</h1>
       <p className="lead">
-        Fucking about with Express, React, Redux, Axios, Router...
+        This application is using a Heroku test node. Dynos need to wake.
       </p>
 
       <Link to="/create">

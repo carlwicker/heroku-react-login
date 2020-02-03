@@ -7,6 +7,7 @@ import WIP from "./components/WIP";
 import UserList from "./components/UserList";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
+import EditUser from "./components/EditUser";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
         <WIP />
 
         <Switch>
+          <Route path="/edit">
+            <EditUser />
+          </Route>
           <Route path="/create">
             <CreateAccountForm />
           </Route>

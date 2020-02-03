@@ -30,6 +30,11 @@ function Navigation() {
             User Administration
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/edit" activeClassName="active">
+            Edit User
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
