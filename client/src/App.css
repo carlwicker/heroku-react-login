@@ -63,6 +63,6 @@ h1 {
   font-weight: 100;
 }
 
-.btn-primary :visited {
-  color: white;
+.btn-primary:visited {
+  color: white !important;
 }
