@@ -47,8 +47,6 @@ function UserList() {
                   </td>
                   <td className="min-width align-middle">
                     <button
-                      link={"/edit/" + user._id}
-                      type="button"
                       className="btn btn-primary"
                       onClick={e => {
                         e.preventDefault();
