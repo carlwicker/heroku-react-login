@@ -19,6 +19,9 @@ function App() {
         <WIP />
 
         <Switch>
+          <Route path="/edit/:_id">
+            <EditUser />
+          </Route>
           <Route path="/edit">
             <EditUser />
           </Route>

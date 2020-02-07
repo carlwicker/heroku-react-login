@@ -7,6 +7,8 @@ import {
   redirectUserList
 } from "../actions";
 
+import { Link } from "react-router-dom";
+
 function UserList() {
   let allUsers = useSelector(state => state.getAllUsersReducer);
   let isUserListLoaded = useSelector(state => state.userLoadedReducer);
@@ -45,13 +47,15 @@ function UserList() {
                   </td>
                   <td className="min-width align-middle">
                     <button
+                      link={"/edit/" + user._id}
+                      type="button"
                       className="btn btn-primary"
                       onClick={e => {
                         e.preventDefault();
                         console.log("Edit: " + user._id);
                       }}
                     >
-                      Edit
+                      <Link to={"/edit/" + user._id}>Edit</Link>
                     </button>{" "}
                     <button
                       className="btn btn-primary"
