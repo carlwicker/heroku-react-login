@@ -47,6 +47,7 @@ function UserList() {
                   </td>
                   <td className="min-width align-middle">
                     <button
+                      type="button"
                       className="btn btn-primary"
                       onClick={e => {
                         e.preventDefault();
@@ -56,6 +57,7 @@ function UserList() {
                       <Link to={"/edit/" + user._id}>Edit</Link>
                     </button>{" "}
                     <button
+                      type="button"
                       className="btn btn-primary"
                       onClick={e => {
                         e.preventDefault();
