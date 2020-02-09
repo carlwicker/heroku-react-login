@@ -39,6 +39,7 @@ function EditUser() {
             className="form-control"
             type="password"
             placeholder="Password"
+            autoComplete="current"
           />
         </div>
         <button type="submit" className="btn btn-danger" disabled>

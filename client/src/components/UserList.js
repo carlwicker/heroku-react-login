@@ -4,7 +4,8 @@ import {
   getAllUsersJSON,
   deleteUser,
   userListLoaded,
-  redirectUserList
+  redirectUserList,
+  getUser
 } from "../actions";
 
 import { Link } from "react-router-dom";
@@ -52,6 +53,7 @@ function UserList() {
                       onClick={e => {
                         e.preventDefault();
                         console.log("Edit: " + user._id);
+                        dispatch(getUser(user._id));
                       }}
                     >
                       <Link to={"/edit/" + user._id}>Edit</Link>

@@ -34,3 +34,14 @@ router.delete("/:_id", (req, res) => {
     .then(user => user.remove().then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false }));
 });
+
+// @route   PATCH api/users/:id/edit
+// @desc    Update item
+// @access  Public
+router.put("/:_id/edit", (req, res) => {
+  Item.findOne({ _id: req.params._id })
+    .then(() => res.json({ success: true }))
+    .then(() => {
+      console.log(res);
+    });
+});

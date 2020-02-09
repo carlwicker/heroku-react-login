@@ -6,6 +6,7 @@ import getAllUsersReducer from "./getAllUsers";
 import deleteUserReducer from "./deleteUserReducer";
 import userLoadedReducer from "./userLoadedReducer";
 import redirectUserListReducer from "./redirectUserList";
+import getUserReducer from "./getUserReducer";
 
 const allReducers = combineReducers({
   loginReducer: loginReducer,
@@ -14,7 +15,8 @@ const allReducers = combineReducers({
   getAllUsersReducer: getAllUsersReducer,
   deleteUserReducer: deleteUserReducer,
   userLoadedReducer: userLoadedReducer,
-  redirectUserListReducer: redirectUserListReducer
+  redirectUserListReducer: redirectUserListReducer,
+  getUserReducer: getUserReducer
 });
 
 export default allReducers;

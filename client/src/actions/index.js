@@ -73,3 +73,14 @@ export const redirectUserList = data => {
     payload: data
   };
 };
+
+// Get User
+export const getUser = _id => {
+  // Axios Get One here then...
+  return dispatch => {
+    dispatch({
+      type: "GET_USER",
+      payload: _id
+    });
+  };
+};
