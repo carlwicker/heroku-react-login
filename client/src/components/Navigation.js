@@ -31,7 +31,11 @@ function Navigation() {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/edit" activeClassName="active">
+          <NavLink
+            className="nav-link disabled"
+            to="/edit"
+            activeClassName="active"
+          >
             Edit User
           </NavLink>
         </li>
