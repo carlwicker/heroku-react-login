@@ -76,7 +76,6 @@ export const redirectUserList = data => {
 
 // Get User
 export const getUser = _id => {
-  // Axios Get One here then...
   return dispatch => {
     dispatch({
       type: "GET_USER",
