@@ -26,8 +26,7 @@ router.post("/", (req, res) => {
   user.save().then(user => res.json(user));
 });
 
-module.exports = router;
-
+// Delete User
 router.delete("/:_id", (req, res) => {
   console.log(req.params._id);
   User.findById(req.params._id)
@@ -35,7 +34,11 @@ router.delete("/:_id", (req, res) => {
     .catch(err => res.status(404).json({ success: false }));
 });
 
-// Get One
+// Get Selected User
 router.get("/:_id", (req, res) => {
-  User.findById(req.params._id).then(user => res.json(user));
+  User.findById(req.params._id)
+    .then(user => res.json(user))
+    .catch(err => console.log(err));
 });
+
+module.exports = router;
