@@ -39,7 +39,7 @@ router.delete("/:_id", (req, res) => {
 // @desc    Update item
 // @access  Public
 router.put("/:_id/edit", (req, res) => {
-  Item.findOne({ _id: req.params._id })
+  User.findOne({ _id: req.params._id })
     .then(() => res.json({ success: true }))
     .then(() => {
       console.log(res);
