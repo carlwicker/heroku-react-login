@@ -11,7 +11,6 @@ export const login = data => {
 // Create Account
 export const createAccount = data => {
   return dispatch => {
-    // Axios PUT here
     Axios.post("https://react-login-js.herokuapp.com/api/users", data)
       .then(() => {
         dispatch({
@@ -77,7 +76,7 @@ export const redirectUserList = data => {
 // Get User
 export const getUser = _id => {
   return dispatch => {
-    Axios.get("https://react-login-js.herokuapp.com/api/users/" + _id + "/edit")
+    Axios.get("https://react-login-js.herokuapp.com/api/users/" + _id)
       .then(res => {
         dispatch({
           type: "GET_USER",
