@@ -83,9 +83,7 @@ export const getUser = _id => {
           type: "GET_USER",
           payload: res.data
         });
-        console.log(res);
       })
-      .then(res => console.log("res"))
       .catch(err => console.log(err));
   };
 };

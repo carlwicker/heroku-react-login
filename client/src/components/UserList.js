@@ -52,7 +52,6 @@ function UserList() {
                       className="btn btn-primary"
                       onClick={e => {
                         e.preventDefault();
-                        console.log("Edit: " + user._id);
                         dispatch(getUser(user._id));
                       }}
                     >
