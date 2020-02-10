@@ -36,6 +36,6 @@ router.delete("/:_id", (req, res) => {
 });
 
 // Get One
-router.get("/:_id/edit", (req, res) => {
+router.get("/:_id", (req, res) => {
   User.findById(req.params._id).then(user => res.json(user));
 });
