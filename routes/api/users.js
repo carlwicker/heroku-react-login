@@ -35,13 +35,7 @@ router.delete("/:_id", (req, res) => {
     .catch(err => res.status(404).json({ success: false }));
 });
 
-// @route   PATCH api/users/:id/edit
-// @desc    Update item
-// @access  Public
-router.put("/:_id/edit", (req, res) => {
-  User.findOne({ _id: req.params._id })
-    .then(() => res.json({ success: true }))
-    .then(() => {
-      console.log(res);
-    });
+// Get One
+router.get("/:_id/edit", (req, res) => {
+  User.findById(req.params._id).then(user => res.json(user));
 });
