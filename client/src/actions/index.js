@@ -77,9 +77,15 @@ export const redirectUserList = data => {
 // Get User
 export const getUser = _id => {
   return dispatch => {
-    dispatch({
-      type: "GET_USER",
-      payload: _id
-    });
+    Axios.get("https://react-login-js.herokuapp.com/api/users/" + _id + "/edit")
+      .then(res => {
+        dispatch({
+          type: "GET_USER",
+          payload: res.data
+        });
+        console.log(res);
+      })
+      .then(res => console.log("res"))
+      .catch(err => console.log(err));
   };
 };
