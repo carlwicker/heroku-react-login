@@ -41,7 +41,7 @@ router.get("/:_id", (req, res) => {
     .catch(err => console.log(err));
 });
 
-// @route   PATCH api/items/:id/update
+// @route   PATCH api/items/:id
 // @desc    Update item
 // @access  Public
 router.put("/:_id", (req, res) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../actions";
+import { Link } from "react-router-dom";
 
 function EditUser() {
   const user = useSelector(state => state.getUserReducer);
@@ -19,7 +20,7 @@ function EditUser() {
     <div className="editUserContainer">
       <h1 className="display-4">Edit User</h1>
       <form
-        onSubmit={() => {
+        onChange={() => {
           console.log(editForm);
         }}
       >
@@ -28,7 +29,7 @@ function EditUser() {
         </div>
         <div className="form-group">
           <input
-            className="form-control"
+            className="form-control firstname"
             type="text"
             placeholder="First Name"
             defaultValue={user.firstname}
@@ -71,16 +72,17 @@ function EditUser() {
             }}
           />
         </div>
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={() => {
-            console.log(editForm);
-            dispatch(updateUser(editForm));
-          }}
-        >
-          Update
-        </button>{" "}
+        <Link to="/users">
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => {
+              dispatch(updateUser(editForm));
+            }}
+          >
+            Update
+          </button>
+        </Link>{" "}
         <button type="button" className="btn btn-primary">
           Revert
         </button>
