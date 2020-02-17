@@ -88,13 +88,16 @@ export const getUser = _id => {
 };
 
 // Update User
-export const updateUser = editForm => {
+export const updateUser = data => {
   return dispatch => {
-    Axios.put("https://react-login-js.herokuapp.com/api/users/" + editForm._id)
+    Axios.put(
+      "https://react-login-js.herokuapp.com/api/users/" + data._id,
+      data
+    )
       .then(res => {
         dispatch({
           type: "UPDATE_USER",
-          payload: editForm
+          payload: data
         });
       })
       .catch(err => console.log(err));

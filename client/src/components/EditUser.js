@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../actions";
-import { Link } from "react-router-dom";
 
 function EditUser() {
   const user = useSelector(state => state.getUserReducer);
@@ -20,8 +19,24 @@ function EditUser() {
     <div className="editUserContainer">
       <h1 className="display-4">Edit User</h1>
       <form
-        onChange={() => {
-          console.log(editForm);
+        onSubmit={e => {
+          e.preventDefault();
+
+          const firstNameInput = document.getElementById("firstname");
+          const lastNameInput = document.getElementById("lastname");
+          const emailInput = document.getElementById("email");
+          const passwordInput = document.getElementById("password");
+
+          const data = {
+            _id: editForm._id,
+            firstname: firstNameInput.value,
+            lastname: lastNameInput.value,
+            email: emailInput.value,
+            password: passwordInput.value
+          };
+
+          console.log(data);
+          dispatch(updateUser(data));
         }}
       >
         <div className="form-group">
@@ -30,6 +45,7 @@ function EditUser() {
         <div className="form-group">
           <input
             className="form-control firstname"
+            id="firstname"
             type="text"
             placeholder="First Name"
             defaultValue={user.firstname}
@@ -41,6 +57,7 @@ function EditUser() {
         <div className="form-group">
           <input
             className="form-control"
+            id="lastname"
             type="text"
             placeholder="Last Name"
             defaultValue={editForm.lastname}
@@ -52,6 +69,7 @@ function EditUser() {
         <div className="form-group">
           <input
             className="form-control"
+            id="email"
             type="email"
             placeholder="Email Address"
             defaultValue={editForm.email}
@@ -63,6 +81,7 @@ function EditUser() {
         <div className="form-group">
           <input
             className="form-control"
+            id="password"
             type="password"
             placeholder="Password"
             autoComplete="current"
@@ -72,17 +91,9 @@ function EditUser() {
             }}
           />
         </div>
-        <Link to="/users">
-          <button
-            type="button"
-            className="btn btn-danger"
-            onClick={() => {
-              dispatch(updateUser(editForm));
-            }}
-          >
-            Update
-          </button>
-        </Link>{" "}
+        <button type="submit" className="btn btn-danger">
+          Update
+        </button>{" "}
         <button type="button" className="btn btn-primary">
           Revert
         </button>
