@@ -76,7 +76,7 @@ function EditUser() {
           className="btn btn-danger"
           onClick={() => {
             console.log(editForm);
-            dispatch(updateUser());
+            dispatch(updateUser(editForm));
           }}
         >
           Update

@@ -44,13 +44,14 @@ router.get("/:_id", (req, res) => {
 // @route   PATCH api/items/:id/update
 // @desc    Update item
 // @access  Public
-router.put("/:_id/update", (req, res) => {
+router.put("/:_id", (req, res) => {
   User.findOneAndUpdate(
     { _id: req.params._id },
     {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.password
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      password: req.body.password
     }
   ).then(() => res.json({ success: true }));
 });

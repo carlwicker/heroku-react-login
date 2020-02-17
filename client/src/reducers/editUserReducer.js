@@ -1,4 +1,4 @@
-const editUserReducer = (state = false, action) => {
+const editUserReducer = (state = {}, action) => {
   switch (action.type) {
     case "UPDATE_USER":
       return action.payload;
