@@ -86,3 +86,19 @@ export const getUser = _id => {
       .catch(err => console.log(err));
   };
 };
+
+// Update User
+export const updateUser = _id => {
+  return dispatch => {
+    Axios.get(
+      "https://react-login-js.herokuapp.com/api/users/" + _id + "/update"
+    )
+      .then(res => {
+        dispatch({
+          type: "UPDATE_USER",
+          payload: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+};

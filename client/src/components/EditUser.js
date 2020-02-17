@@ -1,8 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUser } from "../actions";
 
 function EditUser() {
   const user = useSelector(state => state.getUserReducer);
+
+  const dispatch = useDispatch();
 
   let editForm = {
     _id: user._id,
@@ -15,9 +18,13 @@ function EditUser() {
   return (
     <div className="editUserContainer">
       <h1 className="display-4">Edit User</h1>
-      <form>
+      <form
+        onSubmit={() => {
+          console.log(editForm);
+        }}
+      >
         <div className="form-group">
-          <input className="form-control" placeholder={user._id} readOnly />
+          <input className="form-control" placeholder={editForm._id} readOnly />
         </div>
         <div className="form-group">
           <input
@@ -26,7 +33,7 @@ function EditUser() {
             placeholder="First Name"
             defaultValue={user.firstname}
             onChange={e => {
-              user.firstname = e.target.value;
+              editForm.firstname = e.target.value;
             }}
           />
         </div>
@@ -35,9 +42,9 @@ function EditUser() {
             className="form-control"
             type="text"
             placeholder="Last Name"
-            defaultValue={user.lastname}
+            defaultValue={editForm.lastname}
             onChange={e => {
-              user.lastname = e.target.value;
+              editForm.lastname = e.target.value;
             }}
           />
         </div>
@@ -46,9 +53,9 @@ function EditUser() {
             className="form-control"
             type="email"
             placeholder="Email Address"
-            defaultValue={user.email}
+            defaultValue={editForm.email}
             onChange={e => {
-              user.email = e.target.value;
+              editForm.email = e.target.value;
             }}
           />
         </div>
@@ -69,6 +76,7 @@ function EditUser() {
           className="btn btn-danger"
           onClick={() => {
             console.log(editForm);
+            dispatch(updateUser());
           }}
         >
           Update

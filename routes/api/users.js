@@ -41,4 +41,18 @@ router.get("/:_id", (req, res) => {
     .catch(err => console.log(err));
 });
 
+// @route   PATCH api/items/:id/update
+// @desc    Update item
+// @access  Public
+router.put("/:_id/update", (req, res) => {
+  User.findOneAndUpdate(
+    { _id: req.params._id },
+    {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.password
+    }
+  ).then(() => res.json({ success: true }));
+});
+
 module.exports = router;
