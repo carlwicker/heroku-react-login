@@ -90,11 +90,7 @@ export const getUser = _id => {
 // Update User
 export const updateUser = editForm => {
   return dispatch => {
-    Axios.get(
-      "https://react-login-js.herokuapp.com/api/users/" +
-        editForm._id +
-        "/update"
-    )
+    Axios.get("https://react-login-js.herokuapp.com/api/users/" + editForm._id)
       .then(res => {
         dispatch({
           type: "UPDATE_USER",
