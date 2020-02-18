@@ -8,20 +8,24 @@ import {
   getUser
 } from "../actions";
 
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function UserList(props) {
+function UserList() {
   let allUsers = useSelector(state => state.getAllUsersReducer);
   let isUserListLoaded = useSelector(state => state.userLoadedReducer);
   let redirectUser = useSelector(state => state.redirectUserListReducer);
-  const dispatch = useDispatch();
-  let userId = null;
+  let isUserSelected = useSelector(state => state.isUserSelectedReducer);
 
+  let userSelected = useSelector(state => state.isUserSelectedReducer);
+
+  const dispatch = useDispatch();
+
+  // Reset Redirect
   if (redirectUser) {
     dispatch(redirectUserList(false));
   }
 
-  if (userId == null) {
+  if (!isUserSelected) {
     return (
       <div className="userListContainer">
         <h1 className="display-4">User Administration</h1>
@@ -53,7 +57,8 @@ function UserList(props) {
                         type="button"
                         className="btn btn-primary"
                         onClick={e => {
-                          dispatch(getUser(user._id));
+                          dispatch(getUser(user._id)) &&
+                            dispatch(userSelected(true));
                         }}
                       >
                         Edit
@@ -63,7 +68,6 @@ function UserList(props) {
                       type="button"
                       className="btn btn-primary"
                       onClick={e => {
-                        e.preventDefault();
                         dispatch(deleteUser(user._id));
                       }}
                     >

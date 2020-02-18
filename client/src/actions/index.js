@@ -104,3 +104,11 @@ export const updateUser = data => {
       .catch(err => console.log(err));
   };
 };
+
+// Is User Selected
+export const isUserSelected = data => {
+  return {
+    type: "IS_USER_SELECTED",
+    payload: data
+  };
+};

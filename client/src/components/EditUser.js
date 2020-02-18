@@ -1,13 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateUser, redirectUserList } from "../actions";
-import { Redirect } from "react-router-dom";
+import { updateUser, redirectUserList, getUser } from "../actions";
+import { Redirect, Link } from "react-router-dom";
 
 function EditUser() {
   const user = useSelector(state => state.getUserReducer);
   const redirect = useSelector(state => state.redirectUserListReducer);
 
   const dispatch = useDispatch();
+
+  const firstNameInput = document.getElementById("firstname");
+  const lastNameInput = document.getElementById("lastname");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
 
   let editForm = {
     _id: user._id,
@@ -16,6 +21,8 @@ function EditUser() {
     email: user.email,
     password: user.password
   };
+
+  console.log(editForm);
 
   if (redirect) {
     return <Redirect to="/users" />;
@@ -27,32 +34,15 @@ function EditUser() {
           onSubmit={e => {
             e.preventDefault();
 
-            const firstNameInput = document.getElementById("firstname");
-            const lastNameInput = document.getElementById("lastname");
-            const emailInput = document.getElementById("email");
-            const passwordInput = document.getElementById("password");
-
-            const data = {
-              _id: editForm._id,
-              firstname: firstNameInput.value,
-              lastname: lastNameInput.value,
-              email: emailInput.value,
-              password: passwordInput.value
-            };
-
             // Update User
-            dispatch(updateUser(data));
+            dispatch(updateUser(editForm));
 
             // Redirect to Users Page
             dispatch(redirectUserList(true));
           }}
         >
           <div className="form-group">
-            <input
-              className="form-control"
-              placeholder={editForm._id}
-              readOnly
-            />
+            <input className="form-control" placeholder={user._id} readOnly />
           </div>
           <div className="form-group">
             <input
@@ -60,7 +50,7 @@ function EditUser() {
               id="firstname"
               type="text"
               placeholder="First Name"
-              defaultValue={user.firstname}
+              defaultValue={editForm.firstname}
               onChange={e => {
                 editForm.firstname = e.target.value;
               }}
@@ -103,7 +93,13 @@ function EditUser() {
               }}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+
+          <button
+            tag={Link}
+            to="/users"
+            type="submit"
+            className="btn btn-primary"
+          >
             Update
           </button>
         </form>
