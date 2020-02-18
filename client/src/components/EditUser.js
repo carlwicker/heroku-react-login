@@ -103,11 +103,8 @@ function EditUser() {
               }}
             />
           </div>
-          <button type="submit" className="btn btn-danger">
+          <button type="submit" className="btn btn-primary">
             Update
-          </button>{" "}
-          <button type="button" className="btn btn-primary">
-            Revert
           </button>
         </form>
       </div>
