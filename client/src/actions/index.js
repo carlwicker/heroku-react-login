@@ -99,6 +99,7 @@ export const updateUser = data => {
           type: "UPDATE_USER",
           payload: data
         });
+        dispatch(getAllUsersJSON());
       })
       .catch(err => console.log(err));
   };
