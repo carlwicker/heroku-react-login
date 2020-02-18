@@ -8,9 +8,9 @@ import {
   getUser
 } from "../actions";
 
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-function UserList() {
+function UserList(props) {
   let allUsers = useSelector(state => state.getAllUsersReducer);
   let isUserListLoaded = useSelector(state => state.userLoadedReducer);
   let redirectUser = useSelector(state => state.redirectUserListReducer);
@@ -47,16 +47,18 @@ function UserList() {
                     {user.firstname} {user.lastname}
                   </td>
                   <td className="min-width align-middle">
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={e => {
-                        e.preventDefault();
-                        dispatch(getUser(user._id));
-                      }}
-                    >
-                      <Link to={"/edit/" + user._id}>Edit</Link>
-                    </button>{" "}
+                    {" "}
+                    <Link to={"/edit/" + user._id}>
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={e => {
+                          dispatch(getUser(user._id));
+                        }}
+                      >
+                        Edit
+                      </button>
+                    </Link>{" "}
                     <button
                       type="button"
                       className="btn btn-primary"
